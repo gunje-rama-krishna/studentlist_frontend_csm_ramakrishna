@@ -27,7 +27,7 @@ function StudentsTable() {
   });
 
   const fetchStudents = () => {
-    fetch('http://localhost:5000/students')
+    fetch('https://studentlist-backend-g59b.onrender.com')
 .then(res => res.json())
 .then(data => setStudentList(data))
 .catch(err => console.log("Error fetching:", err))
@@ -43,7 +43,7 @@ function StudentsTable() {
       const method = editingStudent? "PUT" : "POST";
       const url = editingStudent
    ? `http://localhost:5000/students/${editingStudent.id}`
-        : `http://localhost:5000/students`;
+        : `https://studentlist-backend-g59b.onrender.com`;
 
       const res = await fetch(url, {
         method,
@@ -221,7 +221,7 @@ function StudentProfile() {
   const [student, setStudent] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/students/${id}`)
+    fetch(`https://studentlist-backend-g59b.onrender.com${id}`)
 .then(res => res.json())
 .then(data => setStudent(data))
 .catch(err => console.log("Error fetching:", err))
