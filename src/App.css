@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+  font-family: 'Poppins', sans-serif; 
+  background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%);
+  background-attachment: fixed;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container { 
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.main-title { 
+  font-size: 22px; /* EVEN SMALLER */
+  font-weight: 900; 
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 5px 10px; /* ADDED TOP-BOTTOM PADDING */
+  line-height: 1.4; /* ADDED THIS - STOPS Y CUTTING */
+  background: linear-gradient(90deg, #FF00FF, #A855F7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+table { 
+  width: 100%; 
+  border-collapse: collapse;
+  min-width: 700px;
+}
+th { 
+  padding: 12px 10px; 
+  text-align: left; 
+  color: #A5B4FC; 
+  font-size: 11px; 
+  font-weight: 700;
+  text-transform: uppercase;
+}
+td { padding: 12px 10px; border-top: 1px solid rgba(168, 85, 247, 0.2); }
+
+.id-col { font-weight: 800; color: #A5B4FC; font-size: 14px; }
+.avatar { 
+  width: 42px; 
+  height: 42px; 
+  border-radius: 10px; 
+  border: 2px solid #A855F7; 
+  cursor: pointer;
+  object-fit: cover;
+}
+.name { font-weight: 700; font-size: 14px; }
+.reg { font-size: 10px; color: #94A3B8; }
+.tag { 
+  background: #10B981;
+  color: white; 
+  padding: 5px 10px; 
+  border-radius: 14px; 
+  font-weight: 700; 
+  font-size: 10px;
+  display: inline-block;
+  white-space: nowrap;
+}
+.action-cell { white-space: nowrap; }
+
+.btn-edit, .btn-view, .btn-back { 
+  padding: 6px 10px;
+  border-radius: 8px; 
+  font-weight: 700; 
+  cursor: pointer; 
+  border: none; 
+  margin: 0 3px;
+  font-family: 'Poppins';
+  font-size: 12px;
+}
+.btn-view { 
+  background: #FF00FF; 
+  color: white; 
+}
+.btn-edit { 
+  background: #4B5563; 
+  color: white; 
+}
+.btn-back { 
+  background: #4B5563; 
+  color: white; 
+  margin-bottom: 20px;
+}
+.table-header {
+  text-align: center;
+  font-weight: 700;
+  color: #E5E7EB;
+}
+.edit-modal {
+  width: 500px;
+  max-height: 90vh;     /* don't go bigger than screen */
+  overflow-y: auto;     /* add scroll if content is big */
+  padding: 30px;
+  border-radius: 15px;
+  background: #2a2a72;
+}
+
+.edit-modal .input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+}
+
+.edit-modal textarea.input {
+  min-height: 80px;     
+  resize: vertical;
+}
+
+.student-info {
+  text-align: center; /* THIS WILL CENTER NAME + REGNO */
+}
+
+/* VIEW PROFILE PAGE - BACK TO PERFECT ORDER */
+.profile-box {
+  background: rgba(30, 27, 75, 0.6);
+  border-radius: 16px;
+  padding: 30px;
+}
+.profile-header { display: flex; gap: 20px; align-items: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(168, 85, 247, 0.3); }
+.profile-avatar { width: 90px; height: 90px; border-radius: 12px; border: 3px solid #A855F7; object-fit: cover; }
+.status { background: #10B981; padding: 5px 12px; border-radius: 16px; font-size: 11px; font-weight: 700; }
+.profile-header h1 { font-size: 28px; margin: 8px 0; }
+.sub-info { color: #A5B4FC; font-size: 14px; }
+.reg-badge { background: rgba(168, 85, 247, 0.3); padding: 8px 16px; border-radius: 8px; margin-top: 8px; display: inline-block; font-weight: 700; }
+
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 25px; } /* 4 COLUMNS FIXED */
+.stat-box { background: rgba(168, 85, 247, 0.2); padding: 15px; border-radius: 10px; text-align: center; }
+.stat-box span { display: block; color: #A5B4FC; font-size: 11px; margin-bottom: 5px; }
+.stat-box b { font-size: 18px; }
+
+.section-title { margin: 25px 0 12px 0; color: #A5B4FC; font-size: 18px; font-weight: 700; }
+.info-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; } /* 2 COLUMNS FIXED */
+.info-box { 
+  background: rgba(168, 85, 247, 0.2); 
+  padding: 15px; 
+  border-radius: 10px;
+}
+.info-box.full { grid-column: 1 / -1; }
+.info-box span { display: block; color: #A5B4FC; font-size: 11px; margin-bottom: 5px; }
+.info-box b { font-size: 14px; }
+
+.popup { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 100; }
+.popup-img { width: 300px; height: 300px; border-radius: 12px; border: 3px solid #A855F7; }
+.edit-modal { background: #1E1B4B; padding: 20px; border-radius: 12px; border: 1px solid #A855F7; width: 90%; max-width: 350px; }
+.input { width: 100%; padding: 10px; background: rgba(255,255,255,0.1); border: 1px solid #A855F7; border-radius: 8px; color: white; margin: 10px 0; }
+.modal-btns { display: flex; gap: 10px; justify-content: center; } 
