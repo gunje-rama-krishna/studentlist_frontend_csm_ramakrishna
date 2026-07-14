@@ -42,8 +42,8 @@ function StudentsTable() {
       setLoading(true);
       const method = editingStudent? "PUT" : "POST";
       const url = editingStudent
-   ? `https://studentlist-backend-g59b.onrender.com/${editingStudent.id}`
-        : `https://studentlist-backend-g59b.onrender.com`;
+   ? `https://studentlist-backend-csm-ramakrishna.onrender.com/${editingStudent.id}`
+        : `https://studentlist-backend-csm-ramakrishna.onrender.com`;
 
       const res = await fetch(url, {
         method,
@@ -68,7 +68,7 @@ function StudentsTable() {
 
   const handleDelete = (id) => {
     if(window.confirm("Delete this student?")){
-      fetch(`https://studentlist-backend-g59b.onrender.com/${id}`, { method: "DELETE" })
+      fetch(`https://studentlist-backend-csm-ramakrishna.onrender.com/${id}`, { method: "DELETE" })
 .then(() => fetchStudents())
     }
   }
@@ -221,7 +221,7 @@ function StudentProfile() {
   const [student, setStudent] = useState(null);
 
   useEffect(() => {
-    fetch(`https://studentlist-backend-g59b.onrender.com/${id}`)
+    fetch(`https://studentlist-backend-csm-ramakrishna.onrender.com/${id}`)
 .then(res => res.json())
 .then(data => setStudent(data))
 .catch(err => console.log("Error fetching:", err))
