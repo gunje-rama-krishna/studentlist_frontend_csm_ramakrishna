@@ -27,7 +27,7 @@ function StudentsTable() {
   });
 
   const fetchStudents = () => {
-    fetch('https://studentlist-backend-g59b.onrender.com')
+    fetch('https://studentlist-backend-csm-ramakrishna.onrender.com')
 .then(res => res.json())
 .then(data => setStudentList(data))
 .catch(err => console.log("Error fetching:", err))
